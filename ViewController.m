@@ -13,6 +13,8 @@
 #import "NetWoringCacheViewController.h"
 #import "ZXShopCartViewController.h"
 #import "LLCalendarViewController.h"
+#import "TestViewController.h"
+#import "LLSDCycleScrollView.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)  NSMutableArray * demoTitleArr;
 @end
@@ -131,7 +133,16 @@
                 [self.navigationController pushViewController:netVc animated:true];
            
         
-        }else if (indexPath.row == 3) {
+        }else if (indexPath.row == 3) { //仿简书个人中心页带下拉刷新
+        
+        }else if (indexPath.row ==4) {
+            TestViewController * dragVc = [TestViewController new];
+            dragVc.title = @"可拖动试图";
+            [self.navigationController pushViewController:dragVc animated:true];
+        
+        }else if (indexPath.row == 5) {//优秀的轮播图
+            LLSDCycleScrollView * sdcycleVc = [LLSDCycleScrollView new];
+            [self.navigationController pushViewController:sdcycleVc animated:true];
         
         }
     }

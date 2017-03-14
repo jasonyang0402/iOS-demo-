@@ -23,7 +23,7 @@
             model.updateTime = timeArr[i];
             switch (i) {
                 case 0:
-                    model.demoArr = [NSMutableArray arrayWithObjects:@"时间日历",@"购物车动画",@"AFN3.0封装,接口并缓存使用YYCace" ,@"仿简书个人中心页,带下拉刷新",nil];
+                    model.demoArr = [NSMutableArray arrayWithObjects:@"时间日历",@"购物车动画",@"AFN3.0封装,接口并缓存使用YYCace" ,@"仿简书个人中心页,带下拉刷新",@"自定义可拖动试图",@"优秀的图片轮播图",nil];
                     break;
                 case 1:
                     model.demoArr = [NSMutableArray arrayWithObjects:@"其他1",@"爱她" ,nil];
