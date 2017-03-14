@@ -15,6 +15,10 @@
 #import "LLCalendarViewController.h"
 #import "TestViewController.h"
 #import "LLSDCycleScrollView.h"
+#import "LLButtonViewController.h"
+#import "LLPersnonalCenterController.h"
+#import "LLSynchronousRequestController.h"
+#import "LLSDAutoLayoutController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)  NSMutableArray * demoTitleArr;
 @end
@@ -134,6 +138,9 @@
            
         
         }else if (indexPath.row == 3) { //仿简书个人中心页带下拉刷新
+            
+            LLPersnonalCenterController * personVc = [LLPersnonalCenterController new];
+            [self.navigationController pushViewController:personVc animated:true];
         
         }else if (indexPath.row ==4) {
             TestViewController * dragVc = [TestViewController new];
@@ -143,6 +150,21 @@
         }else if (indexPath.row == 5) {//优秀的轮播图
             LLSDCycleScrollView * sdcycleVc = [LLSDCycleScrollView new];
             [self.navigationController pushViewController:sdcycleVc animated:true];
+        
+        }else if (indexPath.row == 6) {//完全自定义按钮
+            
+            LLButtonViewController * buttonVc = [LLButtonViewController new];
+            [self.navigationController pushViewController:buttonVc animated:true];
+        
+        }else if (indexPath.row == 7) { //使用GDC实现网络同步请求
+            LLSynchronousRequestController * SynchronousVc = [LLSynchronousRequestController new];
+            SynchronousVc.title = @"使用GDC实现网络同步请求";
+            [self.navigationController pushViewController:SynchronousVc animated:true];
+        
+        }else if (indexPath.row == 8) {//SDAutolayout的简单实用,一行代码计算行高
+            LLSDAutoLayoutController * layoutVc = [LLSDAutoLayoutController new];
+            layoutVc.title = @"SDAutolayout的简单实用,一行代码计算行高";
+            [self.navigationController pushViewController:layoutVc animated:true];
         
         }
     }
