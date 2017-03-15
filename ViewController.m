@@ -19,6 +19,7 @@
 #import "LLPersnonalCenterController.h"
 #import "LLSynchronousRequestController.h"
 #import "LLSDAutoLayoutController.h"
+#import "XMGTabBarController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)  NSMutableArray * demoTitleArr;
 @end
@@ -167,6 +168,15 @@
             [self.navigationController pushViewController:layoutVc animated:true];
         
         }
+    }else if (indexPath.section == 1) { //2017-03-15
+    
+        if (indexPath.row == 0) {
+            XMGTabBarController * tabBarVc = [XMGTabBarController new];
+            //tabBarVc.title = @"百思不得姐项目小马哥MVC";
+            [self presentViewController:tabBarVc animated:true completion:nil];
+        }
+    
+    
     }
 
 }

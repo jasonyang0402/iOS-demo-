@@ -232,10 +232,7 @@ NS_ASSUME_NONNULL_END
                             selector:(SEL __nullable)sel;
 
 
-#pragma mark - 过期方法
-@property (nonatomic, assign) BAButtonPositionStyle buttonStatus BAButtonDeprecated("方法已过期，请使用最新属性名：buttonPositionStyle");
-+ (instancetype _Nonnull)BA_ShareButton BAButtonDeprecated("方法已过期，请使用最新方法名：BAButton *btn1 = [[BAButton alloc] init]");
-- (instancetype _Nonnull)initWitButtonStatus:(BAButtonPositionStyle)status BAButtonDeprecated("方法已过期，请使用最新方法名：BAButton *btn1 = [[BAButton alloc] init]");
+
 
 @end
 
