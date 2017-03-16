@@ -14,7 +14,7 @@
     
     
        
-        NSArray * timeArr = @[@"2017-03-14",@"2017-03-15"];
+        NSArray * timeArr = @[@"2017-03-14更新",@"2017-03-15更新",@"2017-03-16更新"];
         
         NSMutableArray * tempArr = [NSMutableArray array];
         
@@ -26,6 +26,9 @@
                     model.demoArr = [NSMutableArray arrayWithObjects:@"时间日历",@"购物车动画",@"AFN3.0封装,接口并缓存使用YYCace" ,@"仿简书个人中心页,带下拉刷新",@"自定义可拖动试图",@"优秀的图片轮播图",@"自定义button,文字在上,图片在上完全有你自己决定",@"网络同步请求,使用信号机制实现",@"SDAutolayout的简单实用,一行代码计算行高",nil];
                     break;
                 case 1:
+                    model.demoArr = [NSMutableArray arrayWithObjects:@"百思不得姐项目小马哥MVC",@"ios瀑布流",@"下拉刷新git图",@"根据可重用标识符,加载不同的cell,实现cell的不同加载方式",@"侧滑栏" ,nil];
+                    break;
+                case 2:
                     model.demoArr = [NSMutableArray arrayWithObjects:@"百思不得姐项目小马哥MVC",@"爱她" ,nil];
                     break;
                 default:

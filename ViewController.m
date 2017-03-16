@@ -20,6 +20,14 @@
 #import "LLSynchronousRequestController.h"
 #import "LLSDAutoLayoutController.h"
 #import "XMGTabBarController.h"
+#import "ZZXClothesCollectionViewController.h"
+#import "ZZXWaterfalllayout.h"
+#import "LLRefreshTableViewController.h"
+#import "LLLoadingCellController.h"
+#import "LLSideBarViewController.h"
+#import "DDMenuController.h"
+#import "LLLeftViewController.h"
+#import "LLRightViewController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)  NSMutableArray * demoTitleArr;
 @end
@@ -174,6 +182,37 @@
             XMGTabBarController * tabBarVc = [XMGTabBarController new];
             //tabBarVc.title = @"百思不得姐项目小马哥MVC";
             [self presentViewController:tabBarVc animated:true completion:nil];
+        }else if (indexPath.row == 1) { //iOS瀑布流
+            UIStoryboard * sb = [UIStoryboard storyboardWithName:@"ZZXClothesCollectionViewController" bundle:nil];
+            ZZXClothesCollectionViewController * layoutVc = sb.instantiateInitialViewController;
+            layoutVc.title = @"iOS瀑布流";
+            [self.navigationController pushViewController:layoutVc animated:true];
+            
+            
+        
+        }else if (indexPath.row ==2 ){
+            
+            LLRefreshTableViewController * refrshVc = [[LLRefreshTableViewController alloc]initWithStyle:UITableViewStylePlain];
+            refrshVc.title = @"下拉刷新Gif图";
+            [self.navigationController pushViewController:refrshVc animated:true];
+        
+        }else if (indexPath.row == 3) {
+            LLLoadingCellController * loadingVc = [[LLLoadingCellController alloc]init];
+            loadingVc.title = @"cell的不同加载方式,根据不同的可重用cell实现";
+            [self.navigationController pushViewController:loadingVc animated:true];
+        }else if (indexPath.row == 4) {
+            
+            LLSideBarViewController * sideBarVc = [LLSideBarViewController new];
+            DDMenuController * ddVc = [[DDMenuController alloc]initWithRootViewController:sideBarVc];
+                                       
+            ddVc.leftViewController = [LLLeftViewController new];
+            ddVc.rightViewController = [LLRightViewController new];
+            sideBarVc.title = @"侧滑栏";
+            [self presentViewController:ddVc animated:true completion:nil];
+            
+            
+        
+        
         }
     
     
