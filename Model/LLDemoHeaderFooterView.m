@@ -37,7 +37,7 @@
 -(void)setModel:(LLDemoModel *)model {
     _model = model;
     _titleLable.text = model.updateTime;
-     _titleLable.frame = CGRectMake(CGRectGetMidX([UIScreen mainScreen].bounds) - 60, 55 /2 - 35 /2, 120, 35);
+     _titleLable.frame = CGRectMake(CGRectGetMidX([UIScreen mainScreen].bounds) - 100, 55 /2 - 35 /2, 200, 35);
 }
 
 -(void)headFootClick {

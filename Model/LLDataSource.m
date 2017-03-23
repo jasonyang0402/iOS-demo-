@@ -14,12 +14,13 @@
     
     
        
-        NSArray * timeArr = @[@"2017-03-14更新",@"2017-03-15更新",@"2017-03-16更新"];
+        NSArray * timeArr = @[@"2017-03-14更新",@"2017-03-15更新",@"2017-03-23更新"];
         
         NSMutableArray * tempArr = [NSMutableArray array];
         
         for (int i =0; i<timeArr.count; i++) {
             LLDemoModel * model = [LLDemoModel new];
+            model.headFootClick = true;
             model.updateTime = timeArr[i];
             switch (i) {
                 case 0:
@@ -29,7 +30,7 @@
                     model.demoArr = [NSMutableArray arrayWithObjects:@"百思不得姐项目小马哥MVC",@"ios瀑布流",@"下拉刷新git图",@"根据可重用标识符,加载不同的cell,实现cell的不同加载方式",@"侧滑栏" ,nil];
                     break;
                 case 2:
-                    model.demoArr = [NSMutableArray arrayWithObjects:@"百思不得姐项目小马哥MVC",@"爱她" ,nil];
+                    model.demoArr = [NSMutableArray arrayWithObjects:@"自定义标题切换,根据文字的宽度确定一屏现实多少个",@"简单的MVVM设计模式" ,nil];
                     break;
                 default:
                     break;

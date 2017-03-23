@@ -498,7 +498,7 @@ forHTTPHeaderField:(NSString *)field
             }
         }
     }
-
+    
     if ([self.HTTPMethodsEncodingParametersInURI containsObject:[[request HTTPMethod] uppercaseString]]) {
         if (query && query.length > 0) {
             mutableRequest.URL = [NSURL URLWithString:[[mutableRequest.URL absoluteString] stringByAppendingFormat:mutableRequest.URL.query ? @"&%@" : @"?%@", query]];

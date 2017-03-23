@@ -28,6 +28,8 @@
 #import "DDMenuController.h"
 #import "LLLeftViewController.h"
 #import "LLRightViewController.h"
+#import "LLSwitchBaseViewController.h"
+#import "LLMVVMViewController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)  NSMutableArray * demoTitleArr;
 @end
@@ -213,6 +215,20 @@
             
         
         
+        }
+    
+    
+    }else if (indexPath.section == 2) { // 2017-03-23更新
+        
+        if (indexPath.row == 0) {
+            
+            LLSwitchBaseViewController * switchVc = [LLSwitchBaseViewController new];
+            switchVc.title = @"自定义标题切换";
+            [self.navigationController pushViewController:switchVc animated:true];
+        }else if (indexPath.row == 1) {//简单的MVVM设计模式
+            LLMVVMViewController * mvvmVc = [LLMVVMViewController new];
+            mvvmVc.title = @"简单的MVVM设计模式";
+            [self.navigationController pushViewController:mvvmVc animated:true];
         }
     
     

@@ -11,6 +11,6 @@
 typedef void (^dataSourceBlock)(NSArray * resultArr);
 @interface LLDataSource : NSObject
 
-@property (nonatomic,copy)  dataSourceBlock  block;
+
 +(void)init:(dataSourceBlock)callBack;
 @end
