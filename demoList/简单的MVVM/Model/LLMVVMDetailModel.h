@@ -10,7 +10,7 @@
 
 @interface LLMVVMDetailModel : NSObject
 @property (copy, nonatomic) NSString *alt;
-@property (nonatomic,strong)  NSArray * avatars;
+@property (nonatomic,strong)  NSDictionary * avatars;
 @property (nonatomic,copy)  NSString * name;
 @property (nonatomic,assign)  NSInteger  id;
 @end

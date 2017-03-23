@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class LLMVVMModel;
 @interface LLMVVMTableViewCell : UITableViewCell
-
+@property (nonatomic,strong)  LLMVVMModel * model;
 @end

@@ -10,6 +10,7 @@
 #import "LLMVVMModel.h"
 #import "LLMVVMViewModel.h"
 #import "MJRefresh.h"
+#import "LLMVVMTableViewCell.h"
 @interface LLMVVMTabView()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,assign)  NSInteger  pageIndex;
 @end
@@ -28,7 +29,7 @@
         self.dataSource = self;
         self.delegate = self;
         
-        [self  registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+        [self  registerClass:[LLMVVMTableViewCell class] forCellReuseIdentifier:@"LLMVVMTableViewCell"];
          __weak typeof(self) weak = self;
         self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             weak.pageIndex = 1;
@@ -55,11 +56,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
+    LLMVVMTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"LLMVVMTableViewCell"];
     LLMVVMModel * model = self.modelArr[indexPath.row];
-    cell.textLabel.text = model.title;
+    cell.model = model;
     return cell;
     
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 100;
+
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
