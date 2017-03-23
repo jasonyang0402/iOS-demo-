@@ -10,3 +10,42 @@ FN3.0封装支持接口的缓存  
 自定义按钮  
 AFN3.0网络同步请求的实现 
 SDAutolaout的简单使用一句话计算行高
+
+///////***********************/2017 -03-23****************
+新增简单的MVVM设计模式
+
+
+/////////控制器代码
+- (void)viewDidLoad {
+[super viewDidLoad];
+self.pageIndex = 1;
+[self.view addSubview:self.tabView];
+[self setupData];
+
+}
+
+- (void)didReceiveMemoryWarning {
+[super didReceiveMemoryWarning];
+// Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc {
+NSLog(@"%s",__func__);
+NSLog(@"***********------------*************");
+NSLog(@"*******************MVVM使用很多的回掉方法,一定要注意循环引用问题*********************");
+NSLog(@"***********------------*************");
+}
+-(void)setupData {
+
+__weak typeof(self) weak = self;
+[[LLMVVMViewModel shareViewModel]setupRequsetDate:self.pageIndex :^(id sucess) {
+weak.tabView.modelArr = sucess;
+[weak.tabView.mj_header endRefreshing];
+[weak.tabView.mj_footer endRefreshing];
+} :^(id error) {
+
+}];
+
+}
+
+/////////
